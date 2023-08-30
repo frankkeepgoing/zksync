@@ -100,7 +100,7 @@ class SyncSwap(Account):
 
                 signed_txn = self.sign(contract_txn)
 
-                txn_hash = self.send_raw_transaction(signed_txn)
+                txn_hash = self.send_raw_transaction(signed_txn.rawTransaction)
 
                 self.wait_until_tx_finished(txn_hash.hex())
             else:
@@ -129,6 +129,6 @@ class SyncSwap(Account):
 
         signed_txn = self.sign(transaction)
 
-        txn_hash = self.send_raw_transaction(signed_txn)
+        txn_hash = self.send_raw_transaction(signed_txn.rawTransaction)
 
         self.wait_until_tx_finished(txn_hash.hex())
